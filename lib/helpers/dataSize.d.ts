@@ -1,8 +1,19 @@
+/**
+ * Common interface to convert sizes
+ */
 export interface ISizeConvert {
     convert(size: string): any;
 }
+/**
+ * Base class to convert sizes
+ */
 export declare class SizeConvert implements ISizeConvert {
     private sizes;
     constructor(sizes: any);
+    /**
+     * Convert size to other country sizes
+     *
+     * @param size A size to be converted
+     */
     convert(size: string): any;
 }
