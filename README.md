@@ -7,7 +7,7 @@
 # Install
 
 ```sh
-$ npm install --save bible-search
+$ npm install --save whats-size
 ```
 
 # Techs Involved
