@@ -1,5 +1,7 @@
 # Library
 
+![WhatsSize Logo](/src/images/logo.png)
+
 > A simple library to convert clothes and shoes to Europe, USA and Brazilian Sizes
 
 # Install
