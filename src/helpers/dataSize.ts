@@ -2,6 +2,10 @@
  * Common interface to convert sizes
  */
 export interface ISizeConvert {
+    /**
+     * Convert size country source to target (example: BRL to USA)
+     * @param size Size as string
+     */
     convert(size: string): any;
 }
 
