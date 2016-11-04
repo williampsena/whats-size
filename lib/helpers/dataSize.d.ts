@@ -9,11 +9,16 @@ export interface ISizeConvert {
  */
 export declare class SizeConvert implements ISizeConvert {
     private sizes;
+    /**
+     * Default constructor
+     * @param sizes  Contains object with specific sizes of type (clothes, shoes)
+     */
     constructor(sizes: any);
     /**
      * Convert size to other country sizes
      *
      * @param size A size to be converted
+     * @returns Object with global sizes
      */
     convert(size: string): any;
 }

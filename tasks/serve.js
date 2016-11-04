@@ -6,7 +6,7 @@ module.exports = {
     task: () => {
         function run() {
             connect.server({
-                root: `${__dirname}/../lib`,
+                root: `${__dirname}/../lib/dist`,
                 port: 8080,
                 livereload: false,
                 open: false,
