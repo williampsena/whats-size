@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;;AAAA,yCAAoC;AACpC,uCAAkC","sourcesContent":["export * from \"./helpers/womanSize\";\nexport * from \"./helpers/menSize\";\n"]}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;;AAAA,yCAAoC;AACpC,uCAAkC;AAClC,wCAAmC","sourcesContent":["export * from \"./helpers/womanSize\";\nexport * from \"./helpers/menSize\";\nexport * from \"./helpers/kidsSize\";\n"]}
