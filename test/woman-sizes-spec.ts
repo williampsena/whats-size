@@ -28,4 +28,8 @@ describe("caculate woman usa sizes", () => {
   it("convert dresses BRL size to usa", () => {
     expect(womanSize.dresses.convert("44").usa).to.equal("10");
   });
+
+  it("get all available woman dresses sizes", () => {
+    expect(Object.keys(womanSize.dresses.getSizes()).length).to.be.above(1);
+  });
 });

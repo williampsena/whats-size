@@ -28,4 +28,8 @@ describe("caculate men usa sizes", () => {
   it("convert suits BRL size to usa", () => {
     expect(menSize.suits.convert("46").usa).to.equal("36");
   });
+
+  it("get all available men suits sizes", () => {
+    expect(Object.keys(menSize.suits.getSizes()).length).to.be.above(1);
+  });
 });

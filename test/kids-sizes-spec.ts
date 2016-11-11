@@ -20,4 +20,8 @@ describe("caculate kids usa sizes", () => {
   it("convert shoes BRL size to usa", () => {
     expect(kidsSize.shoes.convert("30").usa).to.equal("11½");
   });
+
+  it("get all available men shoes sizes", () => {
+    expect(Object.keys(kidsSize.shoes.getSizes()).length).to.be.above(1);
+  });
 });
