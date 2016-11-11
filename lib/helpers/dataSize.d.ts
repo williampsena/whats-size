@@ -25,4 +25,10 @@ export declare class SizeConvert implements ISizeConvert {
      * @returns Object with global sizes
      */
     convert(size: string): any;
+    /**
+     * Get all sizes by type
+     *
+     * @returns Object with all sizes by type
+     */
+    getSizes(): any;
 }

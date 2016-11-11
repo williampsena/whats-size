@@ -13,4 +13,10 @@ export declare abstract class Size {
      * @param country Must be the acronym of country source (eua, brl, eur)
      */
     constructor(country: string);
+    /**
+     * Get all data sizes
+     *
+     * @returns Object with all data sizes
+     */
+    getDataSizes(): any;
 }
