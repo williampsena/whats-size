@@ -21,4 +21,13 @@ export abstract class Size {
 
         this.simple = new SizeConvert(this.dataSizes.simple[country]);
     }
+
+    /**
+     * Get all data sizes
+     *
+     * @returns Object with all data sizes
+     */
+    public getDataSizes(): any {
+        return this.dataSizes;
+    }
 };

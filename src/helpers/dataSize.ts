@@ -38,4 +38,13 @@ export class SizeConvert implements ISizeConvert {
 
         return convertedSize;
     }
+
+    /**
+     * Get all sizes by type
+     *
+     * @returns Object with all sizes by type
+     */
+    public getSizes(): any {
+        return this.sizes;
+    }
 };
