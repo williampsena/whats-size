@@ -7,6 +7,12 @@ export interface ISizeConvert {
      * @param size Size as string
      */
     convert(size: string): any;
+    /**
+     * Get all sizes by type
+     *
+     * @returns Object with all sizes by type
+     */
+    getSizes(): any;
 }
 /**
  * Base class to convert sizes
