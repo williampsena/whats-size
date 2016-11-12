@@ -1,5 +1,5 @@
 /* tslint:disable */
-import * as WomanSizes from "./helpers/womanSize";
+import * as WomenSizes from "./helpers/womenSize";
 import * as MenSizes from "./helpers/menSize";
 import * as KidsSize from "./helpers/kidsSize";
 
@@ -16,9 +16,9 @@ class WhatsSizes {
      */
     public static MenSize: any = MenSizes.MenSize;
     /**
-     * Woman size helper 
+     * Women size helper 
      */
-    public static WomanSize: any = WomanSizes.WomanSize;
+    public static WomenSize: any = WomenSizes.WomenSize;
 }
 
 (<any>window).WhatsSize = WhatsSizes;

@@ -2,9 +2,9 @@ import { ISizeConvert, SizeConvert } from "./dataSize";
 import { Size } from "./size";
 
 /**
- * Helper class to woman sizes converters
+ * Helper class to women sizes converters
  */
-export class WomanSize extends Size {
+export class WomenSize extends Size {
     /**
      * Converter to blouses sizes
      */
@@ -37,10 +37,10 @@ export class WomanSize extends Size {
     constructor(country: string) {
         super(country);
 
-        this.blouses = new SizeConvert(this.dataSizes.woman_blouse[country]);
-        this.coats = new SizeConvert(this.dataSizes.woman_coats_dress[country]);
-        this.dresses = new SizeConvert(this.dataSizes.woman_coats_dress[country]);
-        this.shoes = new SizeConvert(this.dataSizes.woman_shoes[country]);
-        this.skirts = new SizeConvert(this.dataSizes.woman_coats_dress[country]);
+        this.blouses = new SizeConvert(this.dataSizes.women_blouse[country]);
+        this.coats = new SizeConvert(this.dataSizes.women_coats_dress[country]);
+        this.dresses = new SizeConvert(this.dataSizes.women_coats_dress[country]);
+        this.shoes = new SizeConvert(this.dataSizes.women_shoes[country]);
+        this.skirts = new SizeConvert(this.dataSizes.women_coats_dress[country]);
     }
 };

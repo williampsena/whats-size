@@ -94,8 +94,8 @@
             }
         }
     },
-    "woman_coats_dress": {
-        "key": "woman_coats_dress",
+    "women_coats_dress": {
+        "key": "women_coats_dress",
         "description": "coats, dresses, skirts",
         "brl": {
             "38": {
@@ -219,8 +219,8 @@
             }
         }
     },
-    "woman_blouse": {
-        "key": "woman_blouse",
+    "women_blouse": {
+        "key": "women_blouse",
         "description": "blouses",
         "brl": {
             "38": {
@@ -334,8 +334,8 @@
             }
         }
     },
-    "woman_shoes": {
-        "key": "woman_shoes",
+    "women_shoes": {
+        "key": "women_shoes",
         "description": "shoes",
         "brl": {
             "35": {

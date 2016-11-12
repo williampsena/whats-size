@@ -1,9 +1,9 @@
 import { ISizeConvert } from "./dataSize";
 import { Size } from "./size";
 /**
- * Helper class to woman sizes converters
+ * Helper class to women sizes converters
  */
-export declare class WomanSize extends Size {
+export declare class WomenSize extends Size {
     /**
      * Converter to blouses sizes
      */

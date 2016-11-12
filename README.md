@@ -81,10 +81,10 @@ There are many ways to use this module directly on client-side, if you use the f
 
 ```js
 var menSize = window.WhatsSize.MenSize;
-var womanSize = window.WhatsSize.WomanSize;
+var womenSize = window.WhatsSize.WomenSize;
 
 menSize.shoes.convert("40");
-womanSize.shoes.convert("37");
+womenSize.shoes.convert("37");
 ```
 
 This module is compatible with webpack and doesn't use a specific or native node module, because of this I mean that could be compatible with Requirejs, Browserify, SystemJS and so force.

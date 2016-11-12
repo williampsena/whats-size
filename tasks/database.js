@@ -48,9 +48,9 @@ module.exports = {
         function run(done) {
             var sheets = [
                 "simple",
-                "woman_coats_dress",
-                "woman_blouse",
-                "woman_shoes",
+                "women_coats_dress",
+                "women_blouse",
+                "women_shoes",
                 "men_shirt",
                 "men_shoes",
                 "men_suit",

@@ -1,5 +1,5 @@
 let MenSize = (<any> window).WhatsSize.MenSize;
-let WomanSize = (<any> window).WhatsSize.WomanSize;
+let WomenSize = (<any> window).WhatsSize.WomenSize;
 
 class Client {
     public getShoesSize(size: string, menSizeSelected: boolean) {
@@ -9,8 +9,8 @@ class Client {
             let menSize = new MenSize("brl");
             sizes = menSize.shoes.convert(size);
         } else {
-            let womanSize = new WomanSize("brl");
-            sizes = womanSize.shoes.convert(size);
+            let womenSize = new WomenSize("brl");
+            sizes = womenSize.shoes.convert(size);
         }
 
         return sizes;
