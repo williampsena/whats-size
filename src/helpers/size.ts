@@ -1,4 +1,9 @@
-import { DataSizeEntriesMap, DataSizes, DataSizesKey, SizeCountry } from '../types'
+import {
+    DataSizeEntriesMap,
+    DataSizes,
+    DataSizesKey,
+    SizeCountry,
+} from '../types'
 export const DATA_SIZES: DataSizes = require('../db/sizes.json')
 
 /**
@@ -28,7 +33,6 @@ export function convertSize(
     return sizes?.[size]
 }
 
-
 /**
  * Returns all country sizes by type.
  *
@@ -47,15 +51,14 @@ export function convertSize(
  * @returns The object with country-specific sizes organized by size origin.
  */
 export function getSizes(
-  sizeCountry: SizeCountry,
-  dataSizeType: DataSizesKey = 'generic'
+    sizeCountry: SizeCountry,
+    dataSizeType: DataSizesKey = 'generic'
 ) {
-  const sizes: DataSizeEntriesMap = DATA_SIZES[dataSizeType]?.[sizeCountry]
-  return sizes
+    const sizes: DataSizeEntriesMap = DATA_SIZES[dataSizeType]?.[sizeCountry]
+    return sizes
 }
-
 
 export default {
     convertSize,
-    getSizes
+    getSizes,
 }

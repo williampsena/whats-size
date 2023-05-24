@@ -27,7 +27,7 @@
     "build:db": "node tasks/database.js",
     "build:doc": "typedoc",
     "serve:doc": "http-server ./docs -p 3001",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "check": "tsc --noEmit",

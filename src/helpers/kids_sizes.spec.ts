@@ -18,6 +18,9 @@ describe('KidsSize', () => {
     })
 
     test('should return all kids sizes', () => {
-        expect(Object.keys(converter.sizes())).toStrictEqual(['clothes', 'shoes'])
+        expect(Object.keys(converter.sizes())).toStrictEqual([
+            'clothes',
+            'shoes',
+        ])
     })
 })
