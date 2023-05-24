@@ -1,83 +1,77 @@
-const gulp = require("gulp");
-const fs = require("fs");
-const exceltojson = require("xls-to-json");
-const Q = require("q");
- 
-module.exports = {
-    task: () => {
-        function prepareModel(datas, getKey) {
-            var output = {};
+const fs = require('fs')
+const xlsToJson = require('xls-to-json')
 
-            datas.forEach(data => {
-                var key = getKey(data);
+const buildModelByKey = (groups, key) =>
+    groups.reduce((acc, data) => {
+        const size = data[key]
 
-                if (key) {
-                    delete data.description;
-                    output[key] = data;
+        if (size) {
+            delete data.description
+            acc[size] = data
+        }
+
+        return acc
+    }, {})
+
+async function parseSizeModel(sheetName) {
+    return new Promise(function (resolve, reject) {
+        xlsToJson(
+            {
+                input: './src/assets/sizes.xls',
+                output: null,
+                sheet: sheetName,
+            },
+            function (err, result) {
+                if (err) {
+                    console.error(err)
+                    return reject(err)
                 }
-            });
 
-            return output;
-        }
+                const model = {
+                    key: sheetName,
+                    description: result[0].description,
+                    brazil: buildModelByKey(result, 'brazil'),
+                    usa: buildModelByKey(result, 'usa'),
+                    europe: buildModelByKey(result, 'europe'),
+                }
 
-        function getSize(sheetname, callback) {
-            return Q.Promise(function (resolve, reject) {
-                exceltojson({
-                    input: "./src/sizes.xls",
-                    output: null,
-                    sheet: sheetname
-                }, function (err, result) {
-                    if (err) {
-                        console.error(err);
-                        throw err;
-                    }
-
-                    var model = {
-                        key: sheetname,
-                        description: result[0].description,
-                        brl: prepareModel(result, (d) => d.brl),
-                        usa: prepareModel(result, (d) => d.usa),
-                        eur: prepareModel(result, (d) => d.eur)
-                    };
-
-                    resolve(model);
-                });
-            });
-        }
-
-        function run(done) {
-            var sheets = [
-                "simple",
-                "women_coats_dress",
-                "women_blouse",
-                "women_shoes",
-                "men_shirt",
-                "men_shoes",
-                "men_suit",
-                "kids_clothes",
-                "kids_shoes"
-            ];
-
-            var promiseSizes = [];
-
-            sheets.forEach(sheetname => {
-                promiseSizes.push(getSize(sheetname));
-            });
-
-            Q.allSettled(promiseSizes).then(models => {
-                var sizes = {};
-
-                models.forEach(model => {
-                    sizes[model.value.key] = model.value;
-                });
-
-                fs.writeFileSync('./src/db/sizes.json', JSON.stringify(sizes, null, 4), 'utf8');
-                done();
-            }).catch(err => {
-                console.error(err);
-            })
-        }
-
-        return gulp.task('database', run);
-    }
+                resolve(model)
+            }
+        )
+    })
 }
+
+async function run() {
+    const sheets = [
+        'generic',
+        'women_coats_dress',
+        'women_blouse',
+        'women_shoes',
+        'men_shirt',
+        'men_shoes',
+        'men_suit',
+        'kids_clothes',
+        'kids_shoes',
+    ]
+
+    const promiseSizes = []
+
+    for (const sheetName of sheets) {
+        promiseSizes.push(parseSizeModel(sheetName))
+    }
+
+    const models = await Promise.all(promiseSizes)
+
+    const sizes = models.reduce(
+        (acc, model) => ({ ...acc, [model.key]: model }),
+        {}
+    )
+
+    fs.writeFileSync(
+        './src/db/sizes.json',
+        JSON.stringify(sizes, null, 4),
+        'utf8'
+    )
+}
+
+run()

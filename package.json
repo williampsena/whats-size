@@ -2,44 +2,54 @@
   "name": "whats-size",
   "version": "0.0.9",
   "description": "whats-size",
+  "module": "lib/index.js",
+  "types": "lib/@types/index.d.ts",
   "license": "MIT",
-  "repository": "",
-  "author": "",
+  "repository": "https://github.com/williampsena/whats-size",
+  "author": "William Sena",
   "keywords": [
-    ""
+    "clothes",
+    "measurements"
   ],
   "files": [
     "lib"
   ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "test": "jest",
+    "ci": "npm run build && npm run test && npm run lint && npm run check",
+    "build": "npm run build:clean && npm run build:esm && npm run build:types && npm run build:assets",
+    "build:esm": "tsc -p config/tsconfig.esm.json",
+    "build:types": "tsc -p config/tsconfig.types.json",
+    "build:clean": "rimraf ./lib ./docs ",
+    "build:assets": "node tasks/copy-assets.js",
+    "build:db": "node tasks/database.js",
+    "build:doc": "typedoc",
+    "serve:doc": "http-server ./docs -p 3001",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "publish": "npm run build && (cd dist/ && npm publish)"
+  },
   "devDependencies": {
-    "@types/chai": "3.4.30",
-    "@types/mocha": "2.2.29",
-    "@types/node": "6.0.31",
-    "chai": "^3.5.0",
-    "cors": "^2.8.1",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0",
-    "gulp-mocha": "^3.0.1",
-    "gulp-nsp": "^2.4.2",
-    "gulp-tslint": "^6.1.3",
-    "gulp-typedoc": "^2.0.0",
-    "gulp-watch": "^4.3.10",
-    "json-loader": "^0.5.4",
-    "mocha": "^3.0.1",
-    "q": "^1.4.1",
-    "ts-loader": "^1.0.0",
-    "ts-node": "^1.2.2",
-    "tslint": "3.15.1",
-    "typedoc": "^0.5.1",
-    "typescript": "2.0.3",
-    "xls-to-json": "^0.4.0"
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "eslint": "^8.41.0",
+    "http-server": "^14.1.1",
+    "rimraf": "^5.0.1",
+    "shelljs": "^0.8.5",
+    "ts-jest": "^29.1.0",
+    "typedoc": "^0.24.7",
+    "typescript": "^5.0.4",
+    "xls-to-json": "^2.1.1"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=18.0.0"
   }
 }

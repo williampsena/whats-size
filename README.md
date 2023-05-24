@@ -2,7 +2,7 @@
 
 ![WhatsSize Logo](/src/images/logo.png)
 
-> A simple library to convert clothes and shoes to Europe, USA and Brazilian Sizes
+A clothing and shoe conversion library for Europe, the United States, and Brazil.
 
 # Install
 
@@ -12,17 +12,15 @@ $ npm install --save whats-size
 
 # Techs Involved
 
-- TypeScript (Transpiled to ES5)
-- Webpack (Module Bundler, used to FrontEnd)
-- Gulp (Build System)
-- Mocha (Test)
+- TypeScript
+- Jest
 
 # Test
 
 For run tests, use task `test`, on gulp, just like this:
 
 ```sh
-gulp test
+npm test
 ```
 
 # Build
@@ -30,79 +28,49 @@ gulp test
 For build project, use task `build`, just like this:
 
 ```sh
-gulp build
+npm run build
 ```
 
-Lib output: ./lib/
+> The output directory is ./lib/
 
 # Update database
 
-For update database, first of all update file `./src/sizes.xls`, and then use task `database`, just like this:
+To update the database, first update the file './src/assets/sizes.xls', and then use task 'database' as follows:
 
 ```sh
-gulp database
+npm run build:db
 ```
 
-After run the command the file ` ./src/db/sizes.json` will be created
-
-# Test on client-side
-
-For test on client-side project, use task `serve`, just like this:
-
-```sh
-gulp serve
-```
-
-This command provides a static webserver using module `connect`, if you change something, build the project again. (Sorry I will implement watch in next updates).
-
-Lib output: ./lib/
+The file './src/db/sizes.json' will be produced once you run the program.
 
 # Using this module in node
 
 ```ts
-import { MenSize } from "whats-size";
+import { convertMenSize } from "whats-size"
 
-let menSize = new MenSize("brl");
-menSize.suits.convert("46") // brl: "36";
+const converter = convertMenSize("brazil")
+converter.suits("46") // brazil: "36";
 ```
 
 - To use the `WhatsSizes` as JavaScript
 
 ```js
-const MenSize = require('whats-size').MenSize;
+const { convertWomenSize } = require('whats-size')
 
-const menSize = new MenSize("brl");
-menSize.suits.convert("46") // brl: "36";
+const converter = convertWomenSize("brl")
+converter.skirts("38") // brazil: "346"
 ```
-
-# Using this module on browser (Client-side)
-
-There are many ways to use this module directly on client-side, if you use the file `whats-size.webpack.js` the object WhatsSize will be created in global context, in that case use, example bellow:
-
-```js
-var menSize = window.WhatsSize.MenSize;
-var womenSize = window.WhatsSize.WomenSize;
-
-menSize.shoes.convert("40");
-womenSize.shoes.convert("37");
-```
-
-This module is compatible with webpack and doesn't use a specific or native node module, because of this I mean that could be compatible with Requirejs, Browserify, SystemJS and so force.
 
 ## How to contribute
 
-Do you have any idea or found a bug ?
+Do you have any suggestions or have you discovered a bug?
 
 [See how to contribute](CONTRIBUTING.md)
 
 # Next steps
 
-- Fix errors on database (sizes.xls)
+- Repair database mistakes (sizes.xls)
 
 # License
 
-MIT License [William Sena](http://www.coisadeprogramador.com.br)
-
-# Thanks
-
-This project was based on scaffolding [Node TypeScript](https://github.com/ospatil/generator-node-typescript)
+MIT License [William Sena](http://willsena.dev)

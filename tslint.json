@@ -1,7 +1,0 @@
-{
-  "extends": "tslint:latest",
-  "rules": {
-    "no-reference": false,
-    "no-var-requires": false
-  }
-}
