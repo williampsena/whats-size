@@ -1,4 +1,4 @@
-import { KidsSizeConverter, convertKidsSize } from './kidsSize'
+import { KidsSizeConverter, convertKidsSize } from './kids_size'
 
 describe('KidsSize', () => {
     let converter: KidsSizeConverter

@@ -1,4 +1,4 @@
-import { WomenSizeConverter, convertWomenSize } from './womenSize'
+import { WomenSizeConverter, convertWomenSize } from './women_size'
 
 describe('WomenSize', () => {
     let converter: WomenSizeConverter
