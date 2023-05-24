@@ -1,4 +1,4 @@
-import { DataSizeEntriesMap, HandlerConverterSize, SizeCountry } from '../types';
+import { DataSizeEntriesMap, HandlerConverterSize, SizeCountry } from './types';
 /**
  * Women size converter contract
  */

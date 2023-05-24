@@ -3,7 +3,7 @@ import {
     DataSizes,
     DataSizesKey,
     SizeCountry,
-} from '../types'
+} from './types'
 export const DATA_SIZES: DataSizes = require('../db/sizes.json')
 
 /**

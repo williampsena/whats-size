@@ -1,4 +1,4 @@
-import { DataSizeEntriesMap, HandlerConverterSize, SizeCountry } from '../types'
+import { DataSizeEntriesMap, HandlerConverterSize, SizeCountry } from './types'
 import { convertSize, getSizes } from './size'
 
 const convertMenShirtSize = (sizeCountry: SizeCountry, size: string) =>

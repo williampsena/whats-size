@@ -25,7 +25,6 @@ function savePackageJson(packageJson) {
 }
 
 function copyAssets() {
-    shelljs.cp('-r', './src/types', './lib/types')
     shelljs.cp('-r', './src/db', './lib/db')
     shelljs.cp('./README.md', './lib')
 }

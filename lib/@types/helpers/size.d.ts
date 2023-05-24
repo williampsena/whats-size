@@ -1,4 +1,4 @@
-import { DataSizeEntriesMap, DataSizes, DataSizesKey, SizeCountry } from '../types';
+import { DataSizeEntriesMap, DataSizes, DataSizesKey, SizeCountry } from './types';
 export declare const DATA_SIZES: DataSizes;
 /**
  * Returns the converted clothing sizes
@@ -18,7 +18,7 @@ export declare const DATA_SIZES: DataSizes;
  * @param dataSizeType - The size type of the data (generic, women_shoes, men_suit, etc.)
  * @returns The object with country-specific sizes transformed.
  */
-export declare function convertSize(sizeCountry: SizeCountry, size: string, dataSizeType?: DataSizesKey): import("../types").DataSizeEntryConversion;
+export declare function convertSize(sizeCountry: SizeCountry, size: string, dataSizeType?: DataSizesKey): import("./types").DataSizeEntryConversion;
 /**
  * Returns all country sizes by type.
  *
