@@ -11,7 +11,9 @@ function cleanPackageJson(packageJson) {
 
 function fixPaths(packageJson) {
     packageJson['module'] = 'index.js'
+    packageJson['main'] = 'index.js'
     packageJson['types'] = '@types/index.d.ts'
+    packageJson['typings'] = '@types/index.d.ts'
 }
 
 function savePackageJson(packageJson) {

@@ -1,18 +1,21 @@
 {
     "name": "whats-size",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "whats-size",
     "module": "index.js",
     "types": "@types/index.d.ts",
     "license": "MIT",
-    "repository": "https://github.com/williampsena/whats-size",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/williampsena/whats-size"
+    },
     "author": "William Sena",
     "keywords": [
         "clothes",
         "measurements"
     ],
-    "main": "lib/index.js",
-    "typings": "lib/index.d.ts",
+    "main": "index.js",
+    "typings": "@types/index.d.ts",
     "devDependencies": {
         "@types/jest": "^29.5.1",
         "@types/node": "^20.2.3",
