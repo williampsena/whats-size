@@ -1,0 +1,35 @@
+{
+    "name": "whats-size",
+    "version": "0.0.9",
+    "description": "whats-size",
+    "module": "index.js",
+    "types": "@types/index.d.ts",
+    "license": "MIT",
+    "repository": "https://github.com/williampsena/whats-size",
+    "author": "William Sena",
+    "keywords": [
+        "clothes",
+        "measurements"
+    ],
+    "files": [
+        "lib"
+    ],
+    "main": "lib/index.js",
+    "typings": "lib/index.d.ts",
+    "devDependencies": {
+        "@types/jest": "^29.5.1",
+        "@types/node": "^20.2.3",
+        "@typescript-eslint/eslint-plugin": "^5.59.7",
+        "eslint": "^8.41.0",
+        "http-server": "^14.1.1",
+        "rimraf": "^5.0.1",
+        "shelljs": "^0.8.5",
+        "ts-jest": "^29.1.0",
+        "typedoc": "^0.24.7",
+        "typescript": "^5.0.4",
+        "xls-to-json": "^2.1.1"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
