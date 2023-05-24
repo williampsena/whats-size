@@ -74,3 +74,7 @@ Do you have any suggestions or have you discovered a bug?
 # License
 
 MIT License [William Sena](http://willsena.dev)
+
+# API Docs
+
+- https://whats-size.willsena.dev/
