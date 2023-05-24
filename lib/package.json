@@ -1,6 +1,6 @@
 {
     "name": "whats-size",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "whats-size",
     "module": "index.js",
     "types": "@types/index.d.ts",
@@ -10,6 +10,9 @@
     "keywords": [
         "clothes",
         "measurements"
+    ],
+    "files": [
+        "lib"
     ],
     "main": "lib/index.js",
     "typings": "lib/index.d.ts",
