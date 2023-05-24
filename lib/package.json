@@ -1,6 +1,6 @@
 {
     "name": "whats-size",
-    "version": "0.0.9",
+    "version": "1.0.0",
     "description": "whats-size",
     "module": "index.js",
     "types": "@types/index.d.ts",
@@ -22,12 +22,13 @@
         "@typescript-eslint/eslint-plugin": "^5.59.7",
         "eslint": "^8.41.0",
         "http-server": "^14.1.1",
+        "prettier": "^2.8.8",
         "rimraf": "^5.0.1",
         "shelljs": "^0.8.5",
         "ts-jest": "^29.1.0",
         "typedoc": "^0.24.7",
         "typescript": "^5.0.4",
-        "xls-to-json": "^2.1.1"
+        "xls-to-json": "^0.3.2"
     },
     "engines": {
         "node": ">=18.0.0"
