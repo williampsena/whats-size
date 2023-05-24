@@ -1,6 +1,6 @@
 {
   "name": "whats-size",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "whats-size",
   "module": "lib/index.js",
   "types": "lib/@types/index.d.ts",
